@@ -10,18 +10,6 @@
     tools:context="com.example.rebeckareitmaier.faceless.ProfileActivity"
     android:id="@+id/oo">
 
-    <ImageButton
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:id="@+id/imageButtonProfile"
-        android:src="@drawable/ic_person_white_48dp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        android:text="this is text"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="38dp" />
-
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,13 +25,14 @@
             android:inputType="textMultiLine"
             android:ems="10"
             android:id="@+id/editText"
-            android:maxLength="50"
             android:paddingLeft="20dp"
             android:background="@drawable/myninepatch"
             android:layout_alignTop="@+id/frameLayout"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="47dp"
-            android:layout_gravity="center_horizontal|top" />
+            android:layout_gravity="center_horizontal|top"
+            android:maxLength="70"
+            />
 
         <EditText
             android:layout_width="match_parent"
