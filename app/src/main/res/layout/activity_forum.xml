@@ -3,11 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.rebeckareitmaier.faceless.ForumActivity">
+    tools:context="com.example.rebeckareitmaier.faceless.ForumActivity"
+    android:background="@drawable/background">
 
     <!-- A RecyclerView with some commonly used attributes -->
     <android.support.v7.widget.RecyclerView
@@ -15,6 +12,12 @@
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       />
+        android:layout_alignParentStart="true" />
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar"
+    ></include>
+
 
 </RelativeLayout>
