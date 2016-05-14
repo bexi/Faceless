@@ -11,7 +11,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/textView"
+            android:id="@+id/quoteTV"
             android:layout_column="0"
             android:layout_span="3" />
     </TableRow>
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Small Text"
-            android:id="@+id/textView2"
+            android:id="@+id/tagTV"
             android:layout_column="0"
             android:layout_span="3" />
     </TableRow>
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
-            android:id="@+id/textView3"
+            android:id="@+id/nameTV"
             android:layout_column="0" />
     </TableRow>
 </TableLayout>

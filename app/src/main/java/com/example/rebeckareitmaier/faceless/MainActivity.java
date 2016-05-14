@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterViewFlipper;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
+
+import com.example.rebeckareitmaier.faceless.MainActivityClasses.CardAdapter;
+import com.example.rebeckareitmaier.faceless.data.User;
+import com.example.rebeckareitmaier.faceless.data.UserData;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -15,26 +17,26 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setAdapterViewFlipper();
+        UserData userData = new UserData();
+        List<User> userList = userData.getUsers();
+        setAdapterViewFlipper(userList);
 
     }
-    private void setAdapterViewFlipper(){
-        List<String> testList;
-        testList = new LinkedList<>();
-        testList.add("ett");
-        testList.add("två");
-        testList.add("tre");
-        ArrayAdapter<String> testAdapt = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, testList);
 
+    //Inits the adapter used for paging
+    private void setAdapterViewFlipper(List<User> users){
+
+        //Create CardAdapter
+        CardAdapter<User> cardAdapter = new CardAdapter<>(this,
+                R.layout.view_main, users);
+        // Create and set the flipper
         final AdapterViewFlipper simpleAdapterViewFlipper = (AdapterViewFlipper) findViewById(R.id.mainAdapterViewFlipper); // get the reference of AdapterViewFlipper
-        simpleAdapterViewFlipper.setAdapter(testAdapt); // set adapter for AdapterViewFlipper. Here adapter is object of custom adapter
+        simpleAdapterViewFlipper.setAdapter(cardAdapter); // set adapter for AdapterViewFlipper
         Button btnNext=(Button) findViewById(R.id.testButton); // get the reference of Button
         // set Click event on next button
         btnNext.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //TING och bäskis knappar
+        //TING och bäskis knappar - att ta bort.
 
         Button btnTing = (Button) findViewById(R.id.tingButton); // get the reference of Button
         btnTing.setOnClickListener(new View.OnClickListener() {

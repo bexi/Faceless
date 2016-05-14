@@ -10,7 +10,7 @@ import java.util.List;
 public class UserData {
     private List<User> users;
 
-    public UserData(List<User> users){
+    public UserData(){
         User gurrabz = new User("gurrabz", "Gustav B", "Att leva är att simma från stranden jag till stranden du i havet vi", "Green",
                 "Hejhej jag är en glad spontan och social kille på 23 vårar. Gillar månskenspromenader och solsemester.",
                 Arrays.asList("Fotboll", "Spel"), Arrays.asList("zidane"), new ArrayList<User>());
@@ -27,8 +27,10 @@ public class UserData {
                 "Hejhej jag är en glad spontan och social tjej på 22 vårar. Gillar bara sushi.",
                 Arrays.asList("Sushi"), Arrays.asList("sushi"), new ArrayList<User>());
 
-        users = Arrays.asList(gurrabz, lovre, bexi);
-
+        users = new ArrayList<>();
+        addUser(gurrabz);
+        addUser(lovre);
+        addUser(bexi);
         addUser(ting);
 
         addFriends(lovre, ting);
