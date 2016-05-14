@@ -17,17 +17,18 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void addListenerOnButton() {
 
-        imageButton = (ImageButton) findViewById(R.id.imageButton);
+        ImageButton imageButton = (ImageButton) findViewById(R.id.imageButtonProfile);
 
         imageButton.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
 
-                Toast.makeText(MyAndroidAppActivity.this,
+                Toast.makeText(ProfileActivity.this,
                         "ImageButton is clicked!", Toast.LENGTH_SHORT).show();
 
             }
 
         });
+    }
 }
