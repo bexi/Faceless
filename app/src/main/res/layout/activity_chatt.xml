@@ -10,11 +10,25 @@
     android:background="@drawable/background"
     tools:context="com.example.rebeckareitmaier.faceless.ChattActivity">
 
+    <TextView
+        android:id="@+id/personname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/primary_text_light"
+        android:textAlignment="center"
+        android:text="Mamma"
+        />
+
+
     <ListView
         android:id="@+id/Listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
+        android:layout_below="@+id/personname"
         >
     </ListView>
 
