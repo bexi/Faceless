@@ -22,34 +22,40 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="38dp" />
 
-    <EditText
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/editText"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="53dp"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:maxLength="50"
-        android:paddingLeft="20dp"
-        android:background="@drawable/myninepatch"
-        />
+        android:id="@+id/frameLayout"
+        android:layout_alignEnd="@+id/editText3"
+        android:layout_above="@+id/editText3">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="167dp"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:maxLength="50"
+            android:paddingLeft="20dp"
+            android:background="@drawable/myninepatch"
+            android:layout_alignTop="@+id/frameLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="47dp"
+            android:layout_gravity="center_horizontal|top" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="@drawable/myninepatch"
+            />
+    </FrameLayout>
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/editText"
-        android:layout_marginTop="48dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:singleLine="true"
-        android:maxLength="20"
-        android:background="@drawable/myninepatch" />
-
-    <EditText
+        android:layout_marginTop="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText3"
