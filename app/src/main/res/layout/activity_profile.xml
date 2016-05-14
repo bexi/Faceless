@@ -16,8 +16,16 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:id="@+id/frameLayout"
-        android:layout_alignEnd="@+id/editText3"
-        android:layout_above="@+id/editText3">
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Here you can write something about yourself!"
+            android:id="@+id/textView1"
+            android:layout_gravity="left|top" />
 
         <EditText
             android:layout_width="match_parent"
@@ -34,30 +42,50 @@
             android:maxLength="70"
             />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Any hashtags?"
+            android:id="@+id/textView2"
+            android:layout_gravity="left|center"
+            android:layout_above="@+id/frameLayout"
+            />
+
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="218dp"
             android:layout_height="wrap_content"
             android:id="@+id/editText2"
-            android:layout_gravity="center_horizontal|bottom"
+            android:layout_gravity="right|center_vertical"
             android:background="@drawable/myninepatch"
             android:maxLength="20"
             android:maxLines="1"
-            />
-    </FrameLayout>
 
-    <EditText
-        android:layout_marginTop="40dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText3"
-        android:layout_above="@+id/imageButtonProfile"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:ellipsize="end"
-        android:maxLength="20"
-        android:maxLines="1"
-        android:background="@drawable/myninepatch"
-        />
+        <EditText
+            android:layout_marginBottom="185dp"
+            android:layout_width="219dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText3"
+            android:layout_above="@+id/textView3"
+            android:layout_alignParentStart="true"
+            android:ellipsize="end"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:background="@drawable/myninepatch"
+            android:layout_gravity="right|bottom" />
+
+        <TextView
+            android:layout_marginBottom="185dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Your name?"
+            android:id="@+id/textView2"
+            android:layout_gravity="left|bottom"
+            android:layout_above="@+id/frameLayout"
+            />
+
+    </FrameLayout>
 
     <!--android:drawable="@drawable/ic_person_white_48dp"-->
 </RelativeLayout>
