@@ -1,5 +1,6 @@
 package com.example.rebeckareitmaier.faceless;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -44,6 +45,28 @@ public class MainActivity extends AppCompatActivity {
                 simpleAdapterViewFlipper.showNext();
             }
         });
+
+        //TING och bäskis knappar
+
+        Button btnTing = (Button) findViewById(R.id.tingButton); // get the reference of Button
+        btnTing.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                Intent nextScreen = new Intent(MainActivity.this, ForumActivity.class);
+                startActivity(nextScreen);
+                //finish();
+            }
+        });
+        Button btnBaesk = (Button) findViewById(R.id.bexiButton); // get the reference of Button
+        btnBaesk.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                Intent nextScreen = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(nextScreen);
+                //finish();
+            }
+        });
+
 
 
     }
