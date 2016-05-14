@@ -6,34 +6,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Small Text"
-            android:id="@+id/tagTV"
-            android:layout_column="0"
-            android:layout_span="3"
-            android:gravity="bottom|center_horizontal"
-            android:layout_below="@+id/quoteTV"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
-            android:id="@+id/quoteTV"
-            android:layout_column="0"
-            android:layout_span="3"
-            android:gravity="center_horizontal"
-            android:layout_below="@+id/nameTV"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true" />
+        android:layout_height="match_parent"
+        android:padding="0dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -48,11 +22,54 @@
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/tagTV"
+            android:layout_height="fill_parent"
             android:stretchColumns="*"
-            android:gravity="bottom"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/nameTV"
+            android:gravity="bottom">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical|center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Large Text"
+                    android:id="@+id/quoteTV"
+                    android:layout_column="0"
+                    android:layout_span="2"
+                    android:layout_below="@+id/nameTV"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center_vertical|center_horizontal" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="72dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:id="@+id/tagTV"
+                    android:layout_column="0"
+                    android:layout_span="2"
+                    android:gravity="center_horizontal"
+                    android:layout_below="@+id/quoteTV"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true" />
+            </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
@@ -68,7 +85,8 @@
                     android:layout_alignParentStart="true"
                     android:radius="10dip"
                     android:layout_alignParentEnd="false"
-                    android:layout_gravity="center" />
+                    android:layout_gravity="center"
+                    android:clickable="false" />
 
                 <ImageView
                     android:layout_width="0dp"
@@ -79,7 +97,8 @@
                     android:layout_alignParentEnd="true"
                     android:radius="10dip"
                     android:layout_toEndOf="@+id/noImg"
-                    android:layout_gravity="bottom|center" />
+                    android:layout_gravity="bottom|center"
+                    android:clickable="false" />
 
             </TableRow>
 

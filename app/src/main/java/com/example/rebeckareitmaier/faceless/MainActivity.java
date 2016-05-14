@@ -1,5 +1,6 @@
 package com.example.rebeckareitmaier.faceless;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.widget.AdapterViewFlipper;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.rebeckareitmaier.faceless.MainActivityClasses.CardAdapter;
 import com.example.rebeckareitmaier.faceless.data.User;
@@ -61,39 +64,38 @@ public class MainActivity extends AppCompatActivity {
         // Create and set the flipper
         final AdapterViewFlipper simpleAdapterViewFlipper = (AdapterViewFlipper) findViewById(R.id.mainAdapterViewFlipper); // get the reference of AdapterViewFlipper
         simpleAdapterViewFlipper.setAdapter(cardAdapter); // set adapter for AdapterViewFlipper
-       /* Button btnNext=(Button) findViewById(R.id.testButton); // get the reference of Button
-        // set Click event on next button
-        btnNext.setOnClickListener(new View.OnClickListener() {
+
+        //yesBtn
+        ImageView yesImg = (ImageView) findViewById(R.id.yesImg);
+        ImageView noImg = (ImageView) findViewById(R.id.noImg);
+
+        yesImg.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-                // show the next view of ViewFlipper
                 simpleAdapterViewFlipper.showNext();
+                Context context = getApplicationContext();
+                CharSequence text = "Yeeey!";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
             }
         });
-
-        //TING och bäskis knappar - att ta bort.
-
-        Button btnTing = (Button) findViewById(R.id.tingButton); // get the reference of Button
-        btnTing.setOnClickListener(new View.OnClickListener() {
+        noImg.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                Intent nextScreen = new Intent(MainActivity.this, ForumActivity.class);
-                startActivity(nextScreen);
-                //finish();
-            }
-        });
-        Button btnBaesk = (Button) findViewById(R.id.bexiButton); // get the reference of Button
-        btnBaesk.setOnClickListener(new View.OnClickListener() {
+                simpleAdapterViewFlipper.showNext();
+                Context context = getApplicationContext();
+                CharSequence text = "Not this one...";
+                int duration = Toast.LENGTH_SHORT;
 
-            public void onClick(View v) {
-                Intent nextScreen = new Intent(MainActivity.this, ProfileActivity.class);
-                startActivity(nextScreen);
-                //finish();
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
             }
         });
 
-*/
+    }
+    public void yesClick(){
 
     }
 }
