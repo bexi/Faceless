@@ -3,9 +3,11 @@ package com.example.rebeckareitmaier.faceless;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterViewFlipper;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.rebeckareitmaier.faceless.MainActivityClasses.CardAdapter;
 import com.example.rebeckareitmaier.faceless.data.User;
@@ -21,10 +23,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
 
         UserData userData = new UserData();
         List<User> userList = userData.getUsers();
         setAdapterViewFlipper(userList);
+
+        ImageButton profilNav = (ImageButton) toolbar.findViewById(R.id.profileBtn);
+        ImageButton forumBtn = (ImageButton) toolbar.findViewById(R.id.forumBtn);
+
+        forumBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nextScreen = new Intent(MainActivity.this, ForumActivity.class);
+                startActivity(nextScreen);
+            }
+        });
+
+        profilNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nextScreen = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(nextScreen);
+
+            }
+        });
 
     }
 
@@ -37,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         // Create and set the flipper
         final AdapterViewFlipper simpleAdapterViewFlipper = (AdapterViewFlipper) findViewById(R.id.mainAdapterViewFlipper); // get the reference of AdapterViewFlipper
         simpleAdapterViewFlipper.setAdapter(cardAdapter); // set adapter for AdapterViewFlipper
-        Button btnNext=(Button) findViewById(R.id.testButton); // get the reference of Button
+       /* Button btnNext=(Button) findViewById(R.id.testButton); // get the reference of Button
         // set Click event on next button
         btnNext.setOnClickListener(new View.OnClickListener() {
 
@@ -69,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+*/
 
     }
 }
