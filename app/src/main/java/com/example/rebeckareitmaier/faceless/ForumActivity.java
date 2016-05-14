@@ -27,7 +27,7 @@ public class ForumActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forum);
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-       // actionBar.inflateMenu(R.menu.menu);
+
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
         mAdapter = new MessageAdapter(movieList);
@@ -86,7 +86,7 @@ public class ForumActivity extends AppCompatActivity {
         ForumMessage movie = new ForumMessage("Jinna Z.", "Action & Adventure", "23:02");
         movieList.add(movie);
 
-        movie = new ForumMessage("Margaery N.", "Animation, Kids & Family", "2015");
+        movie = new ForumMessage("Margaery N.", "Animation, Kids & Family", "22:21");
         movieList.add(movie);
 
         movie = new ForumMessage("Sandra A.", "Action", "19:51");
