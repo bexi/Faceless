@@ -20,6 +20,7 @@
             android:paddingLeft="10dip"
             android:text="Hello friends"
             android:textColor="@android:color/primary_text_light"
+            android:textSize="50sp"
             />
 
     </LinearLayout>
