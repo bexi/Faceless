@@ -1,6 +1,7 @@
 package com.example.rebeckareitmaier.faceless.MainActivityClasses;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,10 +43,10 @@ public class CardAdapter<T> extends ArrayAdapter {
         List<String> tagList = currentUser.getTags();
         String tags = "";
         for(String s: tagList){
-            tags.concat(" #" + s);
+            tags = tags.concat(" #" + s);
         }
         //Setting all fields
-        quoteTextView.setText(currentUser.getQuote());
+        quoteTextView.setText("'" + currentUser.getQuote() + "'");
         tagTextView.setText(tags);
         nameTextView.setText(currentUser.getName());
 
