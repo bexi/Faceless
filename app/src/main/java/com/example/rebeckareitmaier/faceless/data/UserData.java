@@ -26,12 +26,16 @@ public class UserData {
         User ting = new User("ting", "Michelle TL", "SUSHI!!!", "Purple",
                 "Hejhej jag är en glad spontan och social tjej på 22 vårar. Gillar bara sushi.",
                 Arrays.asList("Sushi"), Arrays.asList("sushi"), new ArrayList<User>());
-
+        User hej = new User("bajs", "Steve J", "Iphones n stuff!!!", "Green",
+                "Hejhej jag är en glad spontan och social tjej på 22 vårar. Gillar bara sushi.",
+                Arrays.asList("Sushi"), Arrays.asList("iPhone", "IOS", "OSX", "AppleWatch"), new ArrayList<User>());
         users = new ArrayList<>();
+        addUser(bexi);
         addUser(gurrabz);
         addUser(lovre);
-        addUser(bexi);
+
         addUser(ting);
+
 
         addFriends(lovre, ting);
     }
