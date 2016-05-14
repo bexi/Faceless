@@ -61,6 +61,17 @@
             android:maxLength="20"
             android:maxLines="1" />
 
+        <TextView
+            android:layout_marginBottom="185dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Your name?"
+            android:id="@+id/textView2"
+            android:layout_gravity="left|bottom"
+            android:layout_above="@+id/frameLayout"
+            />
+
         <EditText
             android:layout_marginBottom="185dp"
             android:layout_width="219dp"
@@ -75,12 +86,12 @@
             android:layout_gravity="right|bottom" />
 
         <TextView
-            android:layout_marginBottom="185dp"
+            android:layout_marginBottom="150dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Your name?"
-            android:id="@+id/textView2"
+            android:text="Your interests?"
+            android:id="@+id/textView3"
             android:layout_gravity="left|bottom"
             android:layout_above="@+id/frameLayout"
             />
