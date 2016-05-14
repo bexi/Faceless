@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Categories">
+        <item>Sport</item>
+        <item>Music</item>
+        <item>Cooking</item>
+        <item>Outdoors</item>
+        <item>Travel</item>
+        <item>Friends</item>
+        <item>Boys</item>
+        <item>Girls</item>
+    </string-array>
+</resources>
