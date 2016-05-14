@@ -14,20 +14,4 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
     }
-
-    public void addListenerOnButton() {
-
-        ImageButton imageButton = (ImageButton) findViewById(R.id.imageButtonProfile);
-
-        imageButton.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                Toast.makeText(ProfileActivity.this,
-                        "You are already on your profile!", Toast.LENGTH_LONG).show();
-
-            }
-        });
-    }
 }
