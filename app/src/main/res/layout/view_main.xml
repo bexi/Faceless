@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:stretchColumns="*">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -44,26 +45,41 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/noImg"
-            android:elevation="4dp"
-            android:src="@drawable/abc_ic_clear_mtrl_alpha"
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_above="@+id/nameTV"
-            android:layout_alignParentStart="true"
-            android:radius="10dip"
-        />
+            android:layout_below="@+id/tagTV"
+            android:stretchColumns="*">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/yesImg"
-            android:elevation="4dp"
-            android:src="@drawable/abc_btn_check_to_on_mtrl_015"
-            android:layout_alignBottom="@+id/noImg"
-            android:layout_alignParentEnd="true"
-            android:radius="10dip"/>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/yesImg"
+                    android:src="@mipmap/yes_btn"
+                    android:layout_alignBottom="@+id/noImg"
+                    android:layout_alignParentEnd="true"
+                    android:radius="10dip"
+                    android:layout_toEndOf="@+id/noImg"
+                    android:layout_gravity="bottom|center" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/noImg"
+                    android:src="@mipmap/no_btn"
+                    android:layout_above="@+id/nameTV"
+                    android:layout_alignParentStart="true"
+                    android:radius="10dip"
+                    android:layout_alignParentEnd="false"
+                    android:layout_gravity="center" />
+            </TableRow>
+
+        </TableLayout>
 
     </RelativeLayout>
 </TableLayout>

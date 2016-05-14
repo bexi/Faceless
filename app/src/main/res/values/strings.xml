@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Faceless</string>
     <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 </resources>
