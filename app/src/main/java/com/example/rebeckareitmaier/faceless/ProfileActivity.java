@@ -25,10 +25,9 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View arg0) {
 
                 Toast.makeText(ProfileActivity.this,
-                        "ImageButton is clicked!", Toast.LENGTH_SHORT).show();
+                        "You are already on your profile!", Toast.LENGTH_LONG).show();
 
             }
-
         });
     }
 }
