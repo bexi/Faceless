@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.rebeckareitmaier.faceless.ForumActivity">
+    tools:context="com.example.rebeckareitmaier.faceless.ForumActivity"
+    android:background="@drawable/background">
 
     <!-- A RecyclerView with some commonly used attributes -->
     <android.support.v7.widget.RecyclerView
@@ -11,7 +12,7 @@
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       />
+        android:layout_alignParentStart="true" />
 
     <include
         android:id="@+id/tool_bar"
