@@ -8,15 +8,67 @@
     app:contentInsetLeft="0dp"
     app:contentInsetStart="0dp">
 
-    <ImageView
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:src="@drawable/toolbar"
-        android:adjustViewBounds="true"
-        android:layout_marginLeft="-10dp"
-        android:contentInsetStart="0dp"
-        android:contentInsetLeft="0dp"
-        />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/toolbar"
+            android:adjustViewBounds="true"
+            android:layout_marginLeft="0dp"
+            android:contentInsetStart="0dp"
+            android:contentInsetLeft="0dp"
+
+            />
+
+        <ImageButton
+            android:src="@drawable/ic_person_white_48dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:text="this is text"
+            android:layout_height="39dp"
+            android:layout_width="40dp"
+            android:layout_gravity="left|bottom"
+            android:background="@null"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/profileBtn" />
+
+        <ImageButton
+            android:src="@drawable/faceless"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:text="this is text"
+            android:layout_height="56dp"
+            android:layout_width="34dp"
+            android:layout_gravity="center|bottom"
+            android:background="@null"
+            android:layout_marginLeft="0dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/homeBtn" />
+
+        <ImageButton
+            android:src="@drawable/ic_forum_white_48dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:text="this is text"
+            android:layout_height="39dp"
+            android:layout_width="40dp"
+            android:layout_gravity="right|bottom"
+            android:background="@null"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginTop="10dp" />
+
+    </FrameLayout>
+
+
+
 
 </android.support.v7.widget.Toolbar>
 
