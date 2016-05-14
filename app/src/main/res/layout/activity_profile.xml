@@ -31,7 +31,11 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="53dp"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:maxLength="50"
+        android:paddingLeft="20dp"
+        android:background="@drawable/myninepatch"
+        />
 
     <EditText
         android:layout_width="wrap_content"
@@ -40,7 +44,10 @@
         android:layout_below="@+id/editText"
         android:layout_marginTop="48dp"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:singleLine="true"
+        android:maxLength="20"
+        android:background="@drawable/myninepatch" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -48,7 +55,12 @@
         android:id="@+id/editText3"
         android:layout_above="@+id/imageButtonProfile"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:maxLength="20"
+        android:background="@drawable/myninepatch"
+        />
 
     <!--android:drawable="@drawable/ic_person_white_48dp"-->
 </RelativeLayout>
