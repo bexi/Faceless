@@ -1,5 +1,6 @@
 package com.example.rebeckareitmaier.faceless;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,10 +9,13 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +61,21 @@ public class ForumActivity extends AppCompatActivity {
             }
         });
 
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                ForumMessage movie = movieList.get(position);
+                Toast.makeText(getApplicationContext(), movie.getName() + " is selected!", Toast.LENGTH_SHORT).show();
+                Intent nextScreen = new Intent(ForumActivity.this, ChattActivity.class);
+                startActivity(nextScreen);
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
+
         prepareMovieData();
     }
 
@@ -83,54 +102,104 @@ public class ForumActivity extends AppCompatActivity {
     }
 
     private void prepareMovieData() {
-        ForumMessage movie = new ForumMessage("Jinna Z.", "Action & Adventure", "23:02");
+        ForumMessage movie = new ForumMessage("Jinna Z.", "I cant", "23:02");
         movieList.add(movie);
 
-        movie = new ForumMessage("Margaery N.", "Animation, Kids & Family", "22:21");
+        movie = new ForumMessage("Margaery N.", "Vacation mon - fri", "22:21");
         movieList.add(movie);
 
-        movie = new ForumMessage("Sandra A.", "Action", "19:51");
+        movie = new ForumMessage("Sandra A.", "whatsup?", "19:51");
         movieList.add(movie);
 
-        movie = new ForumMessage("Rina V.", "Animation", "2015");
+        movie = new ForumMessage("Rina V.", "Yeah, sounds cool", "2015");
         movieList.add(movie);
 
-        movie = new ForumMessage("Martin M.", "Science Fiction & Fantasy", "17:45");
+        movie = new ForumMessage("Martin M.", "Asap", "17:45");
         movieList.add(movie);
 
-        movie = new ForumMessage("Cassie H.", "Action", "16:23");
+        movie = new ForumMessage("Cassie H.", "Brb, gonna get food", "16:23");
         movieList.add(movie);
 
-        movie = new ForumMessage("Candy H.", "Action", "16:21");
+        movie = new ForumMessage("Candy H.", "What about today?", "16:21");
         movieList.add(movie);
 
-        movie = new ForumMessage("Sandra L.", "Science Fiction", "16:00");
+        movie = new ForumMessage("Sandra L.", "I don't understand...", "16:00");
         movieList.add(movie);
 
-        movie = new ForumMessage("Gustav O.", "Animation", "2014");
+        movie = new ForumMessage("Gustav O.", "I wanna meet them", "2014");
         movieList.add(movie);
 
-        movie = new ForumMessage("Rebecka R.", "Action & Adventure", "2008");
+        movie = new ForumMessage("Rebecka R.", "What about skiing?", "2008");
         movieList.add(movie);
 
-        movie = new ForumMessage("Gina U.", "Science Fiction", "15:59");
+        movie = new ForumMessage("Gina U.", "Naa, kinda tired", "15:59");
         movieList.add(movie);
 
-        movie = new ForumMessage("Sara R.", "Animation", "15:45");
+        movie = new ForumMessage("Sara R.", "Have you seen it? Its on cinema", "15:45");
         movieList.add(movie);
 
-        movie = new ForumMessage("Leslie A.", "Science Fiction", "13:12");
+        movie = new ForumMessage("Leslie A.", "I don't like sushi, grab burger?", "13:12");
         movieList.add(movie);
 
-        movie = new ForumMessage("Katarina K.", "Action & Adventure", "13:12");
+        movie = new ForumMessage("Katarina K.", "Hello nice to meet you", "13:12");
         movieList.add(movie);
 
-        movie = new ForumMessage("Alex A.", "Action & Adventure", "13:00");
+        movie = new ForumMessage("Alex A.", "Im so tireeeedddddd", "13:00");
         movieList.add(movie);
 
-        movie = new ForumMessage("Ryan T", "Science Fiction & Fantasy", "12:00");
+        movie = new ForumMessage("Ryan T", "aawww, he's so cute", "12:00");
         movieList.add(movie);
 
         mAdapter.notifyDataSetChanged();
     }
+
+    public interface ClickListener {
+        void onClick(View view, int position);
+
+        void onLongClick(View view, int position);
+    }
+
+    public static class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
+
+        private GestureDetector gestureDetector;
+        private ForumActivity.ClickListener clickListener;
+
+        public RecyclerTouchListener(Context context, final RecyclerView recyclerView, final ForumActivity.ClickListener clickListener) {
+            this.clickListener = clickListener;
+            gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
+                @Override
+                public boolean onSingleTapUp(MotionEvent e) {
+                    return true;
+                }
+
+                @Override
+                public void onLongPress(MotionEvent e) {
+                    View child = recyclerView.findChildViewUnder(e.getX(), e.getY());
+                    if (child != null && clickListener != null) {
+                        clickListener.onLongClick(child, recyclerView.getChildPosition(child));
+                    }
+                }
+            });
+        }
+
+        @Override
+        public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+
+            View child = rv.findChildViewUnder(e.getX(), e.getY());
+            if (child != null && clickListener != null && gestureDetector.onTouchEvent(e)) {
+                clickListener.onClick(child, rv.getChildPosition(child));
+            }
+            return false;
+        }
+
+        @Override
+        public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+        }
+
+        @Override
+        public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+        }
+    }
+
 }
